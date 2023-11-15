@@ -27,7 +27,7 @@ export default function sectionEditarAluno(event) {
 
   const infoAlunosMaiores = document.getElementById("infoEditarAlunosMaiores");
 
-  fetch(`https://191.252.205.138:3333/alunosId/${btnid}`, {
+  fetch(`https://vps50387.publiccloud.com.br:3333/alunosId/${btnid}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -126,7 +126,7 @@ function editarAluno(event) {
     observacoes: getValue("inputEditarObservacoes"),
     socio: socio,
   };
-  fetch(`https://191.252.205.138:3333/alunos/${id}`, {
+  fetch(`https://vps50387.publiccloud.com.br:3333/alunos/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
