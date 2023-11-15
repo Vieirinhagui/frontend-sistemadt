@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <title>Sistema DT</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="../../assets/images/logo.png" id="logo" alt="logo" />
+        <svg
+          class="menu-icon"
+          id="abrirMenu"
+          width="40"
+          height="25"
+          viewBox="0 0 40 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="40" height="5" rx="2" fill="#2E342E" />
+          <rect y="10" width="40" height="5" rx="2" fill="#2E342E" />
+          <rect y="20" width="40" height="5" rx="2" fill="#2E342E" />
+        </svg>
+        <div class="menu-background" id="menu-background" style="display: none">
+          <div class="menu">
+            <svg
+              id="fecharMenu"
+              width="30"
+              height="30"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                y="28.2843"
+                width="40"
+                height="5"
+                rx="2"
+                transform="rotate(-45 0 28.2843)"
+                fill="#2E342E"
+              />
+              <path
+                d="M2.12131 1.41421C2.90236 0.633165 4.16869 0.633165 4.94974 1.41421L30.4056 26.8701C31.1866 27.6511 31.1866 28.9174 30.4056 29.6985L29.6985 30.4056C28.9174 31.1866 27.6511 31.1866 26.87 30.4056L1.4142 4.94975C0.633154 4.1687 0.633154 2.90237 1.4142 2.12132L2.12131 1.41421Z"
+                fill="#2E342E"
+              />
+            </svg>
+
+            <button class="btnhome" id="btnhomeMobile">Home</button>
+            <details>
+              <summary>Alunos</summary>
+              <button class="btnbuscarAlunos" id="btnbuscarAlunosMobile">
+                Buscar Alunos
+              </button>
+              <button class="btncadastrarAlunos" id="btncadastrarAlunosMobile">
+                Adicionar Alunos
+              </button>
+            </details>
+            <button id="btnrelatoriosMobile">Relatório</button>
+            <button id="btnfinanceiroMobile">Financeiro</button>
+          </div>
+        </div>
+        <div class="menu-desktop" id="menu-desktop">
+          <button class="btnhome" id="btnhomeDesktop">Home</button>
+          <details id="alunodetails">
+            <summary>Alunos</summary>
+            <button class="btnbuscarAlunos" id="btnbuscarAlunosDesktop">
+              Buscar Alunos
+            </button>
+            <button class="btncadastrarAlunos" id="btncadastrarAlunosDesktop">
+              Adicionar Alunos
+            </button>
+          </details>
+          <button id="btnrelatoriosDesktop">Relatório</button>
+            <button id="btnfinanceiroDesktop">Financeiro</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="home" style="display: flex">
+        <div class="saudacao">
+          <h1>BEM-VINDO</h1>
+          <h3>Guilherme Vieira</h3>
+        </div>
+        <div class="cards">
+          <div class="card alunosAtivos">
+            <p>ALUNOS ATIVOS: <span>200</span></p>
+          </div>
+          <div class="card numeroPagamentos">
+            <p>DIA <span>11</span> POSSUEM <span>18</span> DEPOSITOS</p>
+          </div>
+          <div class="card rendaEstimada">
+            <p>RENDA ESTIMADA: <span>R$ 200.000</span></p>
+          </div>
+        </div>
+      </section>
+      <section id="buscaralunos" style="display: none">
+        <div id="filter">
+          <p>Digite um nome para filtrar</p>
+          <input
+            placeholder="Digite um nome para filtrar"
+            type="text"
+            name="Nome"
+            id="inputfilternome"
+            autofocus
+          />
+          <button id="btnbuscaraluno">BUSCAR TODOS</button>
+        </div>
+        <div id="results">
+          <table id="resultsTable">
+            <tr>
+              <th>STATUS</th>
+              <th>ID</th>
+              <th>NOME</th>
+              <th>AÇÃO</th>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section id="cadastraralunos" style="display: none">
+        <div>
+          <h1>CADASTRO DE ALUNO</h1>
+          <form action="" id="formcadastrar">
+            <div id="infoAlunosStatus" class="info-section">
+              <input type="file" src="" alt="foto-perfil" />
+              <fieldset>
+                <legend>Status:</legend>
+                <div>
+                  <input
+                    type="radio"
+                    name="status"
+                    id="inputAtivo"
+                    value="true"
+                  />
+                  <label for="inputAtivo">Ativo</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="status"
+                    id="inputInativo"
+                    value="false"
+                  />
+                  <label for="inputInativo">Inativo</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Status Pagamento:</legend>
+                <div>
+                  <input type="radio" name="statusPagamento" id="inputPago" />
+                  <label for="inputPago">Pago</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="statusPagamento"
+                    id="inputPendente"
+                  />
+                  <label for="inputPendente">Pendente</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Sócio:</legend>
+                <div>
+                  <input type="radio" name="socio" id="inputSocio" />
+                  <label for="inputSocio">Sócio</label>
+                </div>
+                <div>
+                  <input type="radio" name="socio" id="inputNaoSocio" />
+                  <label for="inputNaoSocio">Não Sócio</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div id="infoAlunos" class="info-section">
+              <fieldset>
+                <label for="nome">Nome:</label>
+                <input
+                  type="text"
+                  name="nome"
+                  id="inputNome"
+                  placeholder="Digite seu nome"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input
+                  type="date"
+                  name="dataNascimento"
+                  id="inputDataNascimento"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="unidade">Unidade:</label>
+                <select name="unidade" id="inputUnidade">
+                  <option value="null" disabled selected>
+                    Selecione a unidade
+                  </option>
+                  <option value="smu">SMU</option>
+                  <option value="lago">Lago Sul</option>
+                  <option value="assefaz">Assefaz</option>
+                  <option value="iate">Iate Clube</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <label for="plano">Plano:</label>
+                <select name="plano" id="inputPlano">
+                  <option value="null" disabled selected>
+                    Selecione o plano
+                  </option>
+                  <option value="mensal">Mensal</option>
+                  <option value="trimestral">Trimestral</option>
+                  <option value="semestral">Semestral</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <label for="diasSemana">Dias na semana:</label>
+                <select name="diasSemana" id="inputDiasSemana">
+                  <option value="null" disabled selected>
+                    Selecione quantidade de aulas:
+                  </option>
+                  <option value="1">1x</option>
+                  <option value="2">2x</option>
+                  <option value="3">3x</option>
+                  <option value="4">4x</option>
+                  <option value="5">5x</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <label for="observacoes">Observações:</label>
+                <input
+                  type="text"
+                  name="observacoes"
+                  id="inputObservacoes"
+                  placeholder="Digite as observações"
+                />
+              </fieldset>
+            </div>
+
+            <div id="infoAlunosMaiores" class="info-section">
+              <fieldset>
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="inputEmail"
+                  placeholder="Digite seu email"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="redeSocial">Rede Social:</label>
+                <input
+                  type="text"
+                  name="redeSocial"
+                  id="inputRedeSocial"
+                  placeholder="Digite sua rede social"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="telefone">Telefone:</label>
+                <input
+                  type="tel"
+                  name="telefone"
+                  id="inputTelefone"
+                  placeholder="Digite seu telefone"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="cep">CEP:</label>
+                <input
+                  type="number"
+                  name="cep"
+                  id="inputCep"
+                  placeholder="Digite seu cep"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="endereco">Endereço:</label>
+                <input
+                  type="text"
+                  name="endereco"
+                  id="inputEndereco"
+                  placeholder="Digite seu endereço"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="bairro">Bairro:</label>
+                <input
+                  type="text"
+                  name="bairro"
+                  id="inputBairro"
+                  placeholder="Digite seu bairro"
+                />
+              </fieldset>
+            </div>
+            <div id="infoResponsaveis" class="info-section">
+              <fieldset>
+                <label for="nomeresponsavel">Nome Responsável:</label>
+                <input
+                  type="text"
+                  name="nomeresponsavel"
+                  id="inputnomeresponsavel"
+                  placeholder="Digite o nome do responsável"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="dataNascimentoresponsavel"
+                  >Data de Nascimento:</label
+                >
+                <input
+                  type="date"
+                  name="dataNascimentoresponsavel"
+                  id="inputDataNascimentoresponsavel"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="telefoneresponsavel">Telefone Responsavel:</label>
+                <input
+                  type="tel"
+                  name="telefoneresponsavel"
+                  id="inputTelefoneresponsavel"
+                  placeholder="Digite seu telefone"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="emailresponsavel">Email Responsável:</label>
+                <input
+                  type="email"
+                  name="emailresponsavel"
+                  id="inputEmailresponsavel"
+                  placeholder="Digite seu email"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="redeSocialresponsavel"
+                  >Rede Social Responsável:</label
+                >
+                <input
+                  type="text"
+                  name="redeSocialresponsavel"
+                  id="inputRedeSocialresponsavel"
+                  placeholder="Digite sua rede social"
+                />
+              </fieldset>
+
+              <fieldset>
+                <label for="cepresponsavel">CEP Responsável:</label>
+                <input
+                  type="number"
+                  name="cepresponsavel"
+                  id="inputCepresponsavel"
+                  placeholder="Digite seu cep"
+                />
+              </fieldset>
+            </div>
+          </form>
+          <button type="submit" value="CADASTRAR" id="btnformcadastraraluno">
+            CADASTRAR
+          </button>
+        </div>
+      </section>
+      <section id="perfilaluno" style="display: none">
+        <div id="divperfilaluno">
+          <img
+            src="assets/images/teste.avif"
+            alt="Imagem de Perfil"
+            id="imgPerfil"
+          />
+          <form action="" id="formdetalhes">
+            <div id="infoAlunosStatus" class="info-section">
+              <fieldset>
+                <label for="status">Status:</label>
+                <p id="resultStatus"></p>
+              </fieldset>
+              <fieldset>
+                <label for="statusPag">Status Pagamento:</label>
+                <p id="resultStatusPag"></p>
+              </fieldset>
+              <fieldset>
+                <label for="socio">Sócio:</label>
+                <p id="resultSocio"></p>
+              </fieldset>
+            </div>
+
+            <div id="infoAlunos" class="info-section">
+              <fieldset>
+                <label for="nome">Nome:</label>
+                <p id="resultNome"></p>
+              </fieldset>
+              <fieldset>
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <p id="resultDataNascimento"></p>
+              </fieldset>
+              <fieldset>
+                <label for="unidade">Unidade:</label>
+                <p id="resultUnidade"></p>
+              </fieldset>
+              <fieldset>
+                <label for="plano">Plano:</label>
+                <p id="resultPlano"></p>
+              </fieldset>
+              <fieldset>
+                <label for="diasSemana">Dias na semana:</label>
+                <p id="resultDiasSemana"></p>
+              </fieldset>
+              <fieldset>
+                <label for="observacoes">Observações:</label>
+                <p id="resultObservacoes"></p>
+              </fieldset>
+            </div>
+
+            <div id="infoSectionAlunosMaiores" class="info-section">
+              <fieldset>
+                <label for="email">Email:</label>
+                <p id="resultEmail"></p>
+              </fieldset>
+              <fieldset>
+                <label for="redeSocial">Rede Social:</label>
+                <p id="resultRedeSocial"></p>
+              </fieldset>
+              <fieldset>
+                <label for="telefone">Telefone:</label>
+                <p id="resultTelefone"></p>
+              </fieldset>
+              <fieldset>
+                <label for="cep">CEP:</label>
+                <p id="resultCep"></p>
+              </fieldset>
+              <fieldset>
+                <label for="endereco">Endereço:</label>
+                <p id="resultEndereco"></p>
+              </fieldset>
+              <fieldset>
+                <label for="bairro">Bairro:</label>
+                <p id="resultBairro"></p>
+              </fieldset>
+            </div>
+            <div id="infoSectionResponsaveis" class="info-section">
+              <h4>INFORMAÇÕES RESPONSÁVEL</h4>
+              <fieldset>
+                <label for="nomesectionresponsavel">Nome Responsável:</label>
+                <p id="resultsectionnomeresponsavel"></p>
+              </fieldset>
+              <fieldset>
+                <label for="dataNascimentosectionresponsavel"
+                  >Data de Nascimento:</label
+                >
+                <p id="resultdataNascimentoresponsavel"></p>
+              </fieldset>
+              <fieldset>
+                <label for="telefonesectionresponsavel"
+                  >Telefone Responsavel:</label
+                >
+                <p id="resultsectiontelefoneresponsavel"></p>
+              </fieldset>
+              <fieldset>
+                <label for="emailsectionresponsavel">Email Responsável:</label>
+                <p id="resultsectionEmailresponsavel"></p>
+              </fieldset>
+              <fieldset>
+                <label for="redeSocialsectionresponsavel"
+                  >Rede Social Responsável:</label
+                >
+                <p id="resultsectionredesocialresponsavel"></p>
+              </fieldset>
+              <fieldset>
+                <label for="cepsectionresponsavel">CEP Responsável:</label>
+                <p id="resultsectioncepresponsavel"></p>
+              </fieldset>
+            </div>
+          </form>
+          <a id="btntermoadesaoaluno" href="assets/docs/termoAdesao.pdf"
+            >TERMO ADESÃO</a
+          >
+          <button data-id="" id="btnformeditaraluno">EDITAR</button>
+        </div>
+      </section>
+      <section id="editaralunos" style="display: none">
+        <div>
+          <h1>EDITAR ALUNO</h1>
+          <form action="" id="formcadastrar">
+            <div id="infoAlunosStatus" class="info-section">
+              <input type="file" src="" alt="foto-perfil" />
+              <fieldset>
+                <legend>Status:</legend>
+                <div>
+                  <input
+                    type="radio"
+                    name="status"
+                    id="inputEditarAtivo"
+                    value="true"
+                  />
+                  <label for="ativo">Ativo</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="status"
+                    id="inputEditarInativo"
+                    value="false"
+                  />
+                  <label for="inativo">Inativo</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Status Pagamento:</legend>
+                <div>
+                  <input
+                    type="radio"
+                    name="statusPagamento"
+                    id="inputEditarPago"
+                  />
+                  <label for="pago">Pago</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="statusPagamento"
+                    id="inputEditarPendente"
+                  />
+                  <label for="pendente">Pendente</label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Sócio:</legend>
+                <div>
+                  <input type="radio" name="socio" id="inputEditarSocio" />
+                  <label for="socio">Sócio</label>
+                </div>
+                <div>
+                  <input type="radio" name="socio" id="inputEditarNaoSocio" />
+                  <label for="naoSocio">Não Sócio</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div id="infoAlunos" class="info-section">
+              <fieldset>
+                <label for="nome">Nome:</label>
+                <input
+                  type="text"
+                  name="nome"
+                  id="inputEditarNome"
+                  placeholder="Digite seu nome"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input
+                  type="date"
+                  name="dataNascimento"
+                  id="inputEditarDataNascimento"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="unidade">Unidade:</label>
+                <select name="unidade" id="inputEditarUnidade">
+                  <option value="null" disabled selected>
+                    Selecione a unidade
+                  </option>
+                  <option value="smu">SMU</option>
+                  <option value="lago">Lago Sul</option>
+                  <option value="assefaz">Assefaz</option>
+                  <option value="iate">Iate Clube</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <label for="plano">Plano:</label>
+                <select name="plano" id="inputEditarPlano">
+                  <option value="null" disabled selected>
+                    Selecione o plano
+                  </option>
+                  <option value="mensal">Mensal</option>
+                  <option value="trimestral">Trimestral</option>
+                  <option value="semestral">Semestral</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <label for="diasSemana">Dias na semana:</label>
+                <select name="diasSemana" id="inputEditarDiasSemana">
+                  <option value="null" disabled selected>
+                    Selecione quantidade de aulas:
+                  </option>
+                  <option value="1">1x</option>
+                  <option value="2">2x</option>
+                  <option value="3">3x</option>
+                  <option value="4">4x</option>
+                  <option value="5">5x</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <label for="observacoes">Observações:</label>
+                <input
+                  type="text"
+                  name="observacoes"
+                  id="inputEditarObservacoes"
+                  placeholder="Digite as observações"
+                />
+              </fieldset>
+            </div>
+
+            <div
+              id="infoEditarAlunosMaiores"
+              style="display: block"
+              class="info-section"
+            >
+              <fieldset>
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="inputEditarEmail"
+                  placeholder="Digite seu email"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="redeSocial">Rede Social:</label>
+                <input
+                  type="text"
+                  name="redeSocial"
+                  id="inputEditarRedeSocial"
+                  placeholder="Digite sua rede social"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="telefone">Telefone:</label>
+                <input
+                  type="tel"
+                  name="telefone"
+                  id="inputEditarTelefone"
+                  placeholder="Digite seu telefone"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="cep">CEP:</label>
+                <input
+                  type="number"
+                  name="cep"
+                  id="inputEditarCep"
+                  placeholder="Digite seu cep"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="endereco">Endereço:</label>
+                <input
+                  type="text"
+                  name="endereco"
+                  id="inputEditarEndereco"
+                  placeholder="Digite seu endereço"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="bairro">Bairro:</label>
+                <input
+                  type="text"
+                  name="bairro"
+                  id="inputEditarBairro"
+                  placeholder="Digite seu bairro"
+                />
+              </fieldset>
+            </div>
+          </form>
+          <button type="submit" value="CADASTRAR" id="btnformsalvaraluno">
+            SALVAR
+          </button>
+        </div>
+      </section>
+      <section id="relatorios" style="display: none">
+        <div id="filter">
+          <h4>Selecione as opções para filtrar</h4>
+          <fieldset id="filterOptions">
+            <div>
+              <input type="checkbox" name="ativo" id="filterRelatorioativo" checked/>
+              <label for="filterRelatorioativo">Ativos</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="inativo"
+                id="filterRelatorioinativo"
+              />
+              <label for="filterRelatorioinativo">Inativos</label>
+            </div>
+            <div>
+              <input type="checkbox" name="nome" id="filterRelatorionome" checked />
+              <label for="filterRelatorionome">Nome</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="telefone"
+                id="filterRelatoriotelefone"
+              />
+              <label for="filterRelatoriotelefone">Telefone</label>
+            </div>
+            <div>
+              <input type="checkbox" name="email" id="filterRelatorioemail" />
+              <label for="filterRelatorioemail">Email</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="endereco"
+                id="filterRelatorioendereco"
+              />
+              <label for="filterRelatorioendereco">Endereço</label>
+            </div>
+            <div>
+              <input type="checkbox" name="cep" id="filterRelatoriocep" />
+              <label for="filterRelatoriocep">CEP</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="unidade"
+                id="filterRelatoriounidade"
+              />
+              <label for="filterRelatoriounidade">Unidade</label>
+            </div>
+            <div>
+              <input type="checkbox" name="plano" id="filterRelatorioplano" />
+              <label for="filterRelatorioplano">Plano</label>
+            </div>
+            <div>
+              <input type="checkbox" name="socio" id="filterRelatoriosocio" />
+              <label for="filterRelatoriosocio">Socio</label>
+            </div>
+            <div>
+              <input type="checkbox" name="bairro" id="filterRelatoriobairro" />
+              <label for="filterRelatoriobairro">Bairro</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="qntDias"
+                id="filterRelatorioqntDias"
+              />
+              <label for="filterRelatorioqntDias">Dias da Semana</label>
+            </div>
+            
+            <div>
+              <input type="checkbox" name="status" id="filterRelatoriostatus" />
+              <label for="filterRelatoriostatus">Status</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="redeSocial"
+                id="filterRelatorioredeSocial"
+              />
+              <label for="filterRelatorioredeSocial">Rede Social</label>
+            </div>
+
+            <div>
+              <input
+                type="checkbox"
+                name="observacoes"
+                id="filterRelatorioobservacoes"
+              />
+              <label for="filterRelatorioobservacoes">Observações</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="statusPag"
+                id="filterRelatoriostatusPag"
+              />
+              <label for="filterRelatoriostatusPag">Status Pagamento</label>
+            </div>
+            <div id="divdataNascimento">
+              <input
+                type="checkbox"
+                name="dataNascimento"
+                id="filterRelatoriodataNascimento"
+              />
+              <label for="filterRelatoriodataNascimento"
+                >Data de Nascimento</label
+              >
+            </div>
+          </fieldset>
+          <button id="btngerarrelatorio">GERAR RELATÓRIO</button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./assets/js/index.js"></script>
+  </body>
+</html>

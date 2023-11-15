@@ -1,0 +1,160 @@
+#perfilaluno {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+#perfilaluno label {
+  font-weight: bold;
+}
+#perfilaluno form {
+  width: 90%;
+}
+
+#perfilaluno {
+  padding-bottom: 2rem;
+}
+#perfilaluno p {
+  font-size: 18px;
+}
+#perfilaluno form h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#perfilaluno #imgPerfil {
+  background-color: #0098da;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+#perfilaluno fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  border: none;
+  outline: none;
+  margin-bottom: 0.5rem;
+}
+#perfilaluno fieldset div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+#perfilaluno > div {
+  width: 90%;
+  background-color: var(--primary);
+  padding: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#perfilaluno > div > div {
+  width: 100%;
+}
+#perfilaluno input[type="text"],
+#perfilaluno input[type="number"],
+#perfilaluno input[type="tel"],
+#perfilaluno input[type="email"],
+#perfilaluno input[type="date"],
+#perfilaluno select {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  padding-left: 5px;
+  border: none;
+  outline: none;
+}
+#perfilaluno input[type="text"]:focus,
+#perfilaluno input[type="number"]:focus,
+#perfilaluno input[type="tel"]:focus,
+#perfilaluno input[type="email"]:focus,
+#perfilaluno select:focus {
+  border-bottom: 1px solid black;
+}
+#perfilaluno input[type="radio"] {
+  accent-color: black;
+}
+
+#perfilaluno button, #perfilaluno a{
+  padding: 0.5rem;
+  background-color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 16px;
+  color: black
+}
+#perfilaluno #infoSectionResponsaveis h4{
+  padding: 1rem 0;
+}
+#resultObservacoes {
+  width: 60%;
+  overflow-wrap: break-word;
+}
+@media screen and (min-width: 768px) {
+  #perfilaluno form .info-section{
+    width: 47%;
+  }
+  #perfilaluno form{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  #perfilaluno button {
+    width: 120px;
+    height: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #perfilaluno {
+    width: 85vw;
+    height: auto;
+  }
+  #perfilaluno #divperfilaluno{
+    width: 50%;
+    background-color: var(--primary);
+    padding: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #perfilaluno #divperfilaluno form {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+  }
+  #perfilaluno #divperfilaluno form div{
+    width: 33%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  #perfilaluno #infoSectionResponsaveis h4{
+    padding: 0 0 1rem;
+    font-size: 15px;
+  }
+}

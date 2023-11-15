@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+@import url("reset.css");
+@import url("login.css");
+@import url("./menu.css");
+@import url("./home.css");
+@import url("./buscarAlunos.css");
+@import url("./cadastrarAlunos.css");
+@import url("./editarAlunos.css");
+@import url("./perfilAluno.css");
+@import url("./relatorios.css");
+
+:root {
+  --primary: #fcb930;
+  --primary-dark: #f0a000;
+  --second: #2e342e;
+  --third: black;
+  --fourth: white;
+  --very-light-grey: #f7f7f7;
+  --grey: #6d6d6d;
+  --light-grey: #dcdcdc;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--fourth);
+  overflow-y: scroll;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+  section{
+    margin-left: 15vw;
+  }
+}
+

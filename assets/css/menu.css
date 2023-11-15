@@ -1,0 +1,143 @@
+nav > img {
+  width: 50vw;
+}
+nav {
+  width: 100vw;
+  height: auto;
+  padding: 2rem 1rem 1rem;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  -webkit-box-shadow: -5px 10px 15px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: -5px 10px 15px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: -5px 10px 15px 5px rgba(0, 0, 0, 0.2);
+}
+.menu-icon {
+  width: 30px;
+  cursor: pointer;
+}
+.menu-background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.menu {
+  width: 70vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  position: absolute;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  background-color: white;
+  padding-top: 10rem;
+}
+.menu svg {
+  position: absolute;
+  top: 2.5rem;
+  right: 2.3rem;
+  cursor: pointer;
+}
+
+.menu summary,
+.menu button {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: inherit;
+  padding: 0.3rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: start;
+  padding-left: 25%;
+  outline: none;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  list-style: none;
+  list-style-type: none;
+}
+.menu details {
+  width: 100%;
+}
+.menu details button {
+  text-align: start;
+  padding-left: 30%;
+}
+.menu button.active {
+  background-color: #d9d9d9;
+  font-weight: bold;
+}
+.menu button:hover,
+.menu summary:hover {
+  background-color: #d9d9d9;
+  font-weight: bold;
+}
+.menu-desktop {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  margin-bottom: 40vh;
+}
+.menu-desktop summary,
+.menu-desktop button {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: inherit;
+  padding: 0.3rem;
+  cursor: pointer;
+  text-align: start;
+  width: 100%;
+  padding-left: 25%;
+  list-style: none;
+  list-style-type: none;
+  background-color: var(--primary);
+  outline: none;
+  border: none;
+}
+.menu-desktop button:hover,
+.menu-desktop summary:hover {
+  background-color: white;
+  font-weight: bold;
+}
+.menu-desktop details button {
+  text-align: start;
+  padding-left: 30%;
+}
+.menu-desktop button.active {
+  background-color: white;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  #logo {
+    width: 30vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #logo {
+    width: 10vw;
+  }
+  nav {
+    width: 15vw;
+    height: 100vh;
+    position: fixed;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .menu-icon {
+    display: none;
+  }
+  .menu-desktop {
+    display: flex;
+  }
+}
