@@ -99,7 +99,7 @@ async function gerarRelatorio() {
   }
   const queryString = `ativo=${ativo}&campos=${parametros.join(",")}`;
 
-  const apiUrl = `http://191.252.205.138:3333/relatorios?${queryString}`;
+  const apiUrl = `https://191.252.205.138:3333/relatorios?${queryString}`;
 
   await fetch(apiUrl, {
     method: "GET",

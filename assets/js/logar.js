@@ -19,7 +19,7 @@ function logar() {
     password: password,
   };
 
-  fetch("http://191.252.205.138:3333/login", {
+  fetch("https://191.252.205.138:3333/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

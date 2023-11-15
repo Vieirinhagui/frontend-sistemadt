@@ -70,7 +70,7 @@ export default function mostrarDetalhesAluno(id) {
   perfilAluno.style.display = "flex";
 
 
-  fetch(`http://191.252.205.138:3333/alunosId/${id}`, {
+  fetch(`https://191.252.205.138:3333/alunosId/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
