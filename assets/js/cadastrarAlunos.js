@@ -118,7 +118,7 @@ function cadastrarAluno(event) {
   };
 
   // Envia os dados para o servidor
-  fetch("https://191.252.205.138:3333/alunos", {
+  fetch("https://vps50387.publiccloud.com.br:3333/alunos", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
