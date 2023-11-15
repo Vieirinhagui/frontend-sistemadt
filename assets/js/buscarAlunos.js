@@ -12,7 +12,7 @@ function buscaralunos() {
   const perfilAluno = document.getElementById("perfilaluno");
   perfilAluno.style.display = "none";
   results.style.display = "flex";
-  fetch("https://191.252.205.138:3333/alunos", {
+  fetch("https://vps50387.publiccloud.com.br:3333/alunos", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -90,7 +90,7 @@ function buscarAlunosEmTempoReal() {
     nome: inputText,
   };
 
-  fetch(`https://191.252.205.138:3333/alunosNome/${inputText}`, {
+  fetch(`https://vps50387.publiccloud.com.br:3333/alunosNome/${inputText}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
