@@ -28,6 +28,7 @@ function logar() {
   })
     .then((response) => {
       // Verifica se a resposta é bem-sucedida
+      console.log(response);
       if (!response.ok) {
         throw new Error("Falha na resposta da rede");
       }
