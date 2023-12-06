@@ -31,11 +31,13 @@ function logar() {
       if (!response.ok) {
         throw new Error("Falha na resposta da rede");
       }
-      console.log(response.headers)
+      for (let [key, value] of response.headers.entries()) {
+        console.log(key + ": " + value);
+      }
       // Extrai o token do cabeçalho 'Authorization'
       const token = response.headers.get("Authorization");
-      console.log(token)
-      console.log(token.split(" ")[1])
+      console.log(token);
+      console.log(token.split(" ")[1]);
       // Verifica se o token existe
       // if (token) {
       //   // Armazena o token na sessionStorage
