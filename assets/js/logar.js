@@ -37,13 +37,13 @@ function logar() {
       console.log(token)
       console.log(token.split(" ")[1])
       // Verifica se o token existe
-      if (token) {
-        // Armazena o token na sessionStorage
-        sessionStorage.setItem("token", token.split(" ")[1]); // Assume que o formato é 'Bearer token'
-        window.location.href = "./paginaInicial.html";
-      } else {
-        alert("Login falhou. Token não encontrado no cabeçalho.");
-      }
+      // if (token) {
+      //   // Armazena o token na sessionStorage
+      //   sessionStorage.setItem("token", token.split(" ")[1]); // Assume que o formato é 'Bearer token'
+      //   window.location.href = "./paginaInicial.html";
+      // } else {
+      //   alert("Login falhou. Token não encontrado no cabeçalho.");
+      // }
     })
     .catch((error) => {
       // Trata erros de rede ou de processamento
