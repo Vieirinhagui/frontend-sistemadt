@@ -31,7 +31,7 @@ function logar() {
       if (!response.ok) {
         throw new Error("Falha na resposta da rede");
       }
-
+      console.log(response.headers)
       // Extrai o token do cabeçalho 'Authorization'
       const token = response.headers.get("Authorization");
       console.log(token)
