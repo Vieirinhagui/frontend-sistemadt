@@ -26,31 +26,16 @@ function logar() {
     },
     body: JSON.stringify(data),
   })
-    .then((response) => {
-      // Verifica se a resposta é bem-sucedida
-      console.log(response);
-      if (!response.ok) {
-        throw new Error("Falha na resposta da rede");
+    .then((response) => response.json())
+    .then((responseData) => {
+      if (responseData.token) {
+        sessionStorage.setItem("token", responseData.token);
+        window.location.href = "./paginaInicial.html";
+      } else {
+        alert("Login falhou. Verifique suas credenciais.");
       }
-      for (let [key, value] of response.headers.entries()) {
-        console.log(key + ": " + value);
-      }
-      // Extrai o token do cabeçalho 'Authorization'
-      const token = response.headers.get("Authorization");
-      console.log(token);
-      console.log(token.split(" ")[1]);
-      // Verifica se o token existe
-      // if (token) {
-      //   // Armazena o token na sessionStorage
-      //   sessionStorage.setItem("token", token.split(" ")[1]); // Assume que o formato é 'Bearer token'
-      //   window.location.href = "./paginaInicial.html";
-      // } else {
-      //   alert("Login falhou. Token não encontrado no cabeçalho.");
-      // }
     })
     .catch((error) => {
-      // Trata erros de rede ou de processamento
       console.error("Ocorreu um erro durante o login:", error);
-      alert("Erro ao realizar o login.");
     });
 }
